@@ -17,4 +17,4 @@ EXPOSE 3000
 RUN echo '#!/bin/bash\n/etc/init.d/redis-server start\nntopng "$@"' > /tmp/run.sh
 RUN chmod +x /tmp/run.sh
 
-ENTRYPOINT ["/tmp/run.sh"]
+#ENTRYPOINT ["/tmp/run.sh"]

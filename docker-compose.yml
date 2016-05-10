@@ -1,0 +1,16 @@
+ntopng:
+  image: jmcarbo/ntopng-docker
+  #net: host
+  ports:
+    - 3000:3000
+  links:
+    - redis:redis
+  command: ntopng -r redis
+
+redis:
+  image: redis
+  command: redis-server --appendonly yes
+  ports:
+    - 6379:6379
+  volumes:
+    - /tmp/data:/data
